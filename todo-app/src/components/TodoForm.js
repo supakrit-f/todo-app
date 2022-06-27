@@ -6,7 +6,7 @@ const TodoForm = (props) => {
   const {todo, settodo, todos, settodos} = props;
 
   const todoList={
-    id: todos.length,
+    id: todos.length+1,
     title: todo
   }
   
@@ -17,14 +17,13 @@ const TodoForm = (props) => {
   const handleSubmit = (e) =>{
     e.preventDefault();
 
-    if(todo !== "" && todos.length <= 8){
+    if(todo !== "" && todoList.id <= 7){
       settodos([...todos,todoList])
     }else{
       return
     }
 
   }
-
 
   return (
     <div className='container-todoForm'>

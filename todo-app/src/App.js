@@ -12,7 +12,7 @@ function App() {
       <div className='container'>
         <div className='box-todo'>
           <TodoForm todo = {todo} settodo ={settodo} todos={todos} settodos={settodos}/>
-          <TodoList todos = {todos}/>
+          <TodoList todos = {todos} settodos={settodos} todo = {todo}/>
         </div>
       </div>
     </div>

@@ -3,7 +3,10 @@ import './TodoList.css';
 import { FiX } from "react-icons/fi";
 
 const TodoList = (props) => {
-  const {todos} = props;
+  const {todos, settodos} = props;
+  const handleDelete = ({id}) =>{
+    settodos(todos.filter((todo)=> todo.id !== id))
+  }
 
   return (
     <div className='todoList'>
@@ -12,7 +15,7 @@ const TodoList = (props) => {
           <div className='box-list'>
             <div className='list' key={todo.id}>
               {todo.title}
-              <a href='#'><FiX/></a>
+              <div onClick={()=>handleDelete(todo)} className='icon-close-list' ><FiX/></div>
             </div> 
           </div>
         ))}
