@@ -22,6 +22,8 @@ const TodoForm = (props) => {
     }else{
       return
     }
+    
+    settodo("");
 
   }
 
@@ -33,7 +35,7 @@ const TodoForm = (props) => {
                 <h1>TODO APP</h1>
             </div>
             <div className='form-input'>
-              <input type='text' onChange={handleChange}/>
+              <input type='text' value={todo} onChange={handleChange}/>
               <button type='submit' className='btn-add'>Add</button>
             </div>
         </form>
